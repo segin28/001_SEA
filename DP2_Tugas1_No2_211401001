@@ -1,0 +1,304 @@
+Program Beef_House;
+uses crt;
+label 1,2,3;
+var 
+nama, back : string;
+k_alacarte, j_alacarte : integer;
+k_sidedish, j_sidedish : integer;
+k_drinks, j_drinks : integer;
+kategori : integer;
+h_alacarte, h_sidedish, h_drinks  : longint;
+    
+begin
+ clrscr;
+    writeln;
+    writeln ('************************************');
+    writeln ('       Welcome To Beef House        ');
+    writeln ('************************************');
+    writeln;
+    write   ('Masukkan Nama Anda  = '); readln(nama);
+ 1:  
+ clrscr;
+    writeln;
+    writeln ('Halo ',nama,', Selamat Datang di Beef House');
+    writeln;
+    writeln ('************************************');
+    writeln ('               MENU                 ');
+    writeln ('************************************');
+    writeln;
+    writeln ('            1. Ala Carte            ');
+    writeln ('            2. Side Dish            ');
+    writeln ('            3. Drinks               ');
+    writeln ('            0. Keluar               ');
+    writeln;
+    writeln ('************************************');
+    writeln; 
+    write   ('Masukkan Menu Utama   = '); readln(kategori);
+    
+if kategori=1 then
+    begin
+    clrscr;
+    writeln;
+    writeln ('************************************');
+    writeln ('              ALA CARTE             ');
+    writeln ('************************************');
+    writeln;
+    writeln (' 1. Full Ribs Australia             ');
+    writeln ('    Harga = Rp 170000               ');
+    writeln;
+    writeln (' 2. Sirloin Australia               ');
+    writeln ('    Harga = Rp 69000                ');
+    writeln;
+    writeln (' 3. Tenderloin Australia            ');
+    writeln ('    Harga = Rp 79000                ');
+    writeln;
+    writeln ('************************************');
+    writeln ('     Pilihan Kode yang Tersedia     ');
+    writeln ('   1 / 2 / 3 / 12 / 13 / 23 / 123   ');
+    writeln ('************************************');
+    writeln;
+    write   ('Masukkan Kode Pesanan = '); readln(k_alacarte);
+    writeln;
+    write   ('Pesanan No. ',k_alacarte,' sebanyak = '); readln(j_alacarte);
+    writeln;
+    
+        if k_alacarte=1 then
+        begin 
+        h_alacarte:=170000*j_alacarte
+        end
+        
+        else if k_alacarte=2 then
+        begin
+        h_alacarte:=69000*j_alacarte
+        end
+        
+        else if k_alacarte=3 then
+        begin
+        h_alacarte:=79000*j_alacarte
+        end
+        
+        else if k_alacarte=12 then
+        begin
+        h_alacarte:=(170000+69000)*j_alacarte
+        end
+        
+        else if k_alacarte=13 then
+        begin
+        h_alacarte:=(170000+79000)*j_alacarte
+        end
+        
+        else if k_alacarte=23 then
+        begin
+        h_alacarte:=(69000+79000)*j_alacarte
+        end
+        
+        else if k_alacarte=123 then
+        begin
+        h_alacarte:=(170000+69000+79000)*j_alacarte
+        end
+        
+        else
+        begin 
+        goto 3
+        end;
+
+
+    write   ('Ingin Memesan Lagi? (Y/N) = ');readln(back);
+    if (back='Y') or (back='y') then
+    begin
+    goto 1
+    end
+
+    else if (back='N') or (back='n') then
+    goto 2
+    end;
+    
+if kategori=2 then
+    begin
+    clrscr;
+    writeln;
+    writeln ('************************************');
+    writeln ('             SIDE DISH              ');
+    writeln ('************************************');
+    writeln;
+    writeln (' 1. French Fries                    ');
+    writeln ('    Harga = Rp 15000                ');
+    writeln;
+    writeln (' 2. Butter Rice                     ');
+    writeln ('    Harga = Rp 6000                 ');
+    writeln;
+    writeln (' 3. Extra Saus                      ');
+    writeln ('    Harga = Rp 6000                 ');
+    writeln;
+    writeln ('************************************');
+    writeln ('     Pilihan Kode yang Tersedia     ');
+    writeln ('   1 / 2 / 3 / 12 / 13 / 23 / 123   ');
+    writeln ('************************************');
+    writeln;
+    write   ('Masukkan Kode Pesanan = '); readln(k_sidedish);
+    writeln;
+    write   ('Pesanan No. ',k_sidedish,' sebanyak = '); readln(j_sidedish);
+    writeln;
+
+        if k_sidedish=1 then
+        begin 
+        h_sidedish:=15000*j_sidedish
+        end
+        
+        else if k_sidedish=2 then
+        begin
+        h_sidedish:=6000*j_sidedish
+        end
+        
+        else if k_sidedish=3 then
+        begin
+        h_sidedish:=6000*j_sidedish
+        end
+        
+        else if k_sidedish=12 then
+        begin
+        h_sidedish:=(15000+6000)*j_sidedish
+        end
+        
+        else if k_sidedish=13 then
+        begin
+        h_sidedish:=(15000+6000)*j_sidedish
+        end
+        
+        else if k_sidedish=23 then
+        begin
+        h_sidedish:=(6000+6000)*j_sidedish
+        end
+        
+        else if k_sidedish=123 then
+        begin
+        h_sidedish:=(15000+6000+6000)*j_sidedish
+        end
+        
+        else
+        begin 
+        goto 3
+        end;
+
+    write   ('Ingin Memesan Lagi? (Y/N) = ');readln(back);
+    if (back='Y') or (back='y') then
+    begin
+    goto 1
+    end
+
+    else if (back='N') or (back='n') then
+    goto 2
+    end;
+    
+if kategori=3 then
+    begin
+    clrscr;
+    writeln;
+    writeln ('************************************');
+    writeln ('               DRINKS               ');
+    writeln ('************************************');
+    writeln;
+    writeln (' 1. Strawberry Milkshake            ');
+    writeln ('    Harga = Rp 15000                ');
+    writeln;
+    writeln (' 2. Coca Cola / Fanta               ');
+    writeln ('    Harga = Rp 15000                ');
+    writeln;
+    writeln (' 3. Apple Tea                       ');
+    writeln ('    Harga = Rp 10000                ');
+    writeln;
+    writeln ('************************************');
+    writeln ('     Pilihan Kode yang Tersedia     ');
+    writeln ('   1 / 2 / 3 / 12 / 13 / 23 / 123   ');
+    writeln ('************************************');
+    writeln;
+    write   ('Masukkan Kode Pesanan = '); readln(k_drinks);
+    writeln;
+    write   ('Pesanan No. ',k_drinks,' sebanyak = '); readln(j_drinks);
+    writeln;
+
+        if k_drinks=1 then
+        begin 
+        h_drinks:=15000*j_drinks
+        end
+        
+        else if k_drinks=2 then
+        begin
+        h_drinks:=15000*j_drinks
+        end
+        
+        else if k_drinks=3 then
+        begin
+        h_drinks:=10000*j_drinks
+        end
+        
+        else if k_drinks=12 then
+        begin
+        h_drinks:=(15000+15000)*j_drinks
+        end
+        
+        else if k_drinks=13 then
+        begin
+        h_drinks:=(15000+10000)*j_drinks
+        end
+        
+        else if k_drinks=23 then
+        begin
+        h_drinks:=(15000+10000)*j_drinks
+        end
+        
+        else if k_drinks=123 then
+        begin
+        h_drinks:=(15000+15000+10000)*j_drinks
+        end
+        
+        else
+        begin 
+        goto 3
+        end;
+ 
+    write   ('Ingin Memesan Lagi? (Y/N) = ');readln(back);
+    if (back='Y') or (back='y') then
+    begin
+    goto 1
+    end
+
+    else if (back='N') or (back='n') then
+    goto 2
+    end;
+
+if kategori=0 then
+    begin
+    goto 2
+    end
+
+
+else;
+ begin 
+3:
+ clrscr;
+ write ('Input yang ',nama,' Masukkan Salah...');
+ readkey;
+ goto 1
+ end;
+ 
+
+2:  
+    clrscr;
+    writeln;
+    writeln;
+    writeln;
+    writeln;
+    writeln;
+    writeln;
+    writeln ('*****************************************');
+    writeln;
+    writeln;
+    writeln ('Total Harga Pesanan = Rp ',h_alacarte+h_sidedish+h_drinks);
+    writeln;
+    writeln;
+    writeln ('*****************************************');
+    writeln;
+    writeln ('Terima Kasih ',nama,' ...   ');
+    
+end.
