@@ -1,0 +1,76 @@
+program matriks;
+
+uses crt;
+
+var
+        matriks1, matriks2, hasil : array[1..2, 1..2] of integer;
+        i, j : integer;
+
+begin
+        clrscr;
+
+        writeln('Matriks 1 : ');
+        for i := 1 to 2 do
+        begin
+                for j := 1 to 2 do
+                begin
+                        write('Masukkan baris ke-', i, ' kolom ke-', j, ' : ');
+                        readln(matriks1[i,j]);
+                end;
+        end;
+
+        writeln;
+        writeln('Matriks 2 : ');
+        for i := 1 to 2 do
+        begin
+                for j := 1 to 2 do
+                begin
+                        write('Masukkan baris ke-', i, ' kolom ke-', j, ' : ');
+                        readln(matriks2[i,j]);
+                end;
+        end;
+
+        clrscr;
+
+        writeln('Matriks 1');
+        for i := 1 to 2 do
+        begin
+                for j := 1 to 2 do
+                begin
+                        write(matriks1[i, j], ' ');
+                end;
+                writeln;
+        end;
+
+        writeln;
+        writeln('Matriks 2');
+        for i := 1 to 2 do
+        begin
+                for j:= 1 to 2 do
+                begin
+                        write(matriks2[i,j], ' ');
+                end;
+                writeln;
+        end;
+
+        for i := 1 to 2 do
+        begin
+                for j := 1 to 2 do
+                begin
+                        hasil[i,j] := matriks1[i,j] + matriks2[i,j];
+                end;
+        end;
+
+        writeln;
+        writeln('Hasil : ');
+        for i := 1 to 2 do
+        begin
+                for j := 1 to 2 do
+                begin
+                        write(hasil[i,j], ' ');
+                end;
+                writeln;
+        end;
+
+        readln;
+end.
